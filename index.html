@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StandBy for iPad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <div id="date">Saturday</div>
+        <div class="flip-clock" id="clock">00:00</div>
+        <canvas id="analogClock" width="300" height="300"></canvas>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js').then(function() {
+              console.log('Service Worker Registered');
+          });
+      }
+    </script>
+</body>
+</html>
